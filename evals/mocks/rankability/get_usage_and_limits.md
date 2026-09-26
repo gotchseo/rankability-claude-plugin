@@ -1,0 +1,1 @@
+{"general_window":{"remaining_pct":62,"resets_at":"2026-09-26T00:00:00Z"},"burst_window":{"remaining_pct":90,"resets_at":"2026-09-25T19:00:00Z"},"scheduled_work":"protected","usage_page":"https://app.rankability.com/settings/billing"}

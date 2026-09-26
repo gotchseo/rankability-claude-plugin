@@ -1,0 +1,23 @@
+{
+  "name": "rankability",
+  "displayName": "Rankability",
+  "version": "0.1.0",
+  "description": "AI search and SEO workflows for agencies: benchmark client visibility across Google and AI answer engines, close competitor citation gaps, refresh decaying pages, triage site health, and assemble client-ready monthly reports from your Rankability account.",
+  "author": {
+    "name": "Rankability",
+    "url": "https://www.rankability.com"
+  },
+  "homepage": "https://help.rankability.com/api/mcp-getting-started",
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "ai-search",
+    "aeo",
+    "geo",
+    "ai-visibility",
+    "rank-tracking",
+    "agency",
+    "content-optimization"
+  ],
+  "repository": "https://github.com/gotchseo/rankability-claude-plugin"
+}
