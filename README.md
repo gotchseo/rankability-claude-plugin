@@ -6,6 +6,7 @@ Rankability is the AI search platform for agencies. This plugin connects Claude 
 
 - **Rankability connector** (`https://app.rankability.com/mcp`): your clients, Tracker measurements, Copywriter, Site Auditor, Search Console data, Search Intelligence, Prospector, publishing drafts and Serena.
 - **Skills**
+  - `local-category-campaign`: run a multi-week campaign to make a client the business Google Maps, Google and AI answers name for one category in one city, with a campaign record in Rankability, a Week 0 benchmark, audits, competitor gaps and weekly check-ins.
   - `ai-visibility-benchmark`: set a baseline for a client's money queries across AI engines and Google, or report where it stands.
   - `competitor-citation-gap`: find where AI answers cite competitors instead of your client and brief the content to close the gap.
   - `refresh-decaying-page`: find a page losing clicks and produce an updated draft to reclaim it.

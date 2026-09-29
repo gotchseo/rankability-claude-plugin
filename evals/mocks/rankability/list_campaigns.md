@@ -1,0 +1,1 @@
+{"campaigns":[{"campaign_id":"c1a2b3c4-0000-4000-8000-000000000001","client_id":"3f6c2a1e-8b7d-4c2e-9a41-5d0e7b1c9f20","name":"Denver plumbing, Q4 2026","market":"Denver, CO","category":"plumbing","status":"active","starts_on":"2026-09-07","ends_on":"2026-11-29"}]}
