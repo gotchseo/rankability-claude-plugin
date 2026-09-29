@@ -12,13 +12,9 @@ For each: Google profile category, rating and review count (confirm in a browser
 
 ## Where the client is missing
 
-1. For each report in the prompt set, pull only what's missing the client:
-   - `get_tracker_sources` with `client_missing_only: true`: every ranking or AI-cited page that doesn't mention the client, with a per-domain rollup (paginate with `limit` and `offset`).
-   - `get_tracker_citation_analysis` with `client_missing_only: true`: AI-cited pages naming competitors but not the client (directories, "best of" lists, info pages on licensing and cost, community threads).
-   - `get_tracker_results` with `view: "summary"` and `client_missing_only: true`: platforms where the answer or result list leaves the client out. Add `include_all_results: true` when you need the full organic and Maps lists (rating, reviews, phone, address for Maps listings).
-   - `get_tracker_competitors`: organic competitors for the query.
-   Collect AI citations, search results where the client isn't on page 1 or in the pack, and directory profile pages where competitors hold the slot.
-2. Classify each page: directory listing, "best of" list, info page, community thread, competitor site, lead-gen doorway (out-of-state template sites; list them but never target them).
+1. Call `get_client_visibility_gaps` with the `campaign_id` (or the prompt set's `project_ids`). In one call it returns every ranking or AI-cited page without the client across the prompt set, one row per page, with page type (directory listing, "best of" list, review platform, info page, community thread, competitor site, lead-gen doorway), market match, competitors present, platforms, prompt count, best position and priority. It also returns AI answers without the client and queries where the client is outside the organic top 10 or the Maps top 3. Paginate with `limit` and `offset`; filter with `page_types`. Doorway, wrong-city and off-topic pages are hidden unless you pass `include_excluded: true`.
+   For one report's detail, use `get_tracker_sources` or `get_tracker_citation_analysis` with `client_missing_only: true`, `get_tracker_results` with `view: "summary"` (add `include_all_results: true` for full organic and Maps lists), and `get_tracker_competitors`.
+2. Review the page types. Never target lead-gen doorway sites (out-of-state template domains). Pages marked unverified (login wall, check failed, not checked) are "could not verify", not "missing".
 3. Verify absence before reporting it. A mention check can miss the client when it appears under its profile name or when a page blocks fetching. Recheck blocked or doubtful pages in a browser, and mark anything unverifiable as such.
 
 ## Output
