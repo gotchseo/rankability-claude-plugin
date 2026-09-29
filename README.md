@@ -19,7 +19,7 @@ Rankability is the AI search platform for agencies. This plugin connects Claude 
 2. Ask in plain language, for example: "How visible is Acme Plumbing in ChatGPT and AI Overviews?", "Build this month's report for Acme", or "Which of Acme's pages are losing traffic?"
 3. Claude reads saved data first. Before anything that uses your Rankability usage allowance (scans, research, crawls, audits, content generation), Claude shows the usage impact and waits for your approval.
 
-A Rankability account is required. Start at https://www.rankability.com.
+A Rankability account is required. Start at [rankability.com](https://www.rankability.com).
 
 ### Install before the directory listing is live
 
@@ -32,4 +32,6 @@ This plugin contains only instructions and a reference to Rankability's hosted s
 
 ## Support
 
-Documentation: https://help.rankability.com/api/mcp-getting-started. Support: via https://help.rankability.com.
+- [Documentation](https://help.rankability.com/api/mcp-getting-started)
+- [Help center](https://help.rankability.com)
+- Email: support@rankability.com

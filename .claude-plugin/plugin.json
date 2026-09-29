@@ -1,7 +1,7 @@
 {
   "name": "rankability",
   "displayName": "Rankability",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "AI search and SEO workflows for agencies: benchmark client visibility across Google and AI answer engines, close competitor citation gaps, refresh decaying pages, triage site health, and assemble client-ready monthly reports from your Rankability account.",
   "author": {
     "name": "Rankability",
@@ -20,5 +20,8 @@
     "content-optimization"
   ],
   "repository": "https://github.com/gotchseo/rankability-claude-plugin",
-  "privacyPolicyUrl": "https://www.rankability.com/privacy/"
+  "privacyPolicyUrl": "https://www.rankability.com/privacy/",
+  "documentationUrl": "https://help.rankability.com/api/mcp-getting-started",
+  "supportUrl": "https://help.rankability.com",
+  "termsOfServiceUrl": "https://www.rankability.com/terms/"
 }
