@@ -28,7 +28,7 @@ A Rankability account is required. Start at https://www.rankability.com.
 
 ## Data and privacy
 
-This plugin contains only instructions and a reference to Rankability's hosted server. It runs no local code and sends data to no other destination. When you use it, Claude sends your requests and the parameters of each tool call (for example client names, domains, keywords and page URLs) to `app.rankability.com` under your Rankability account, and receives your Rankability data in return. Access is granted by OAuth and can be revoked in Rankability under Settings, Connected apps. Rankability's handling of this data is described in its privacy policy: https://www.rankability.com/privacy/. Terms: https://www.rankability.com/terms/.
+This plugin contains only instructions and a reference to Rankability's hosted server. It runs no local code and sends data to no other destination. When you use it, Claude sends your requests and the parameters of each tool call (for example client names, domains, keywords and page URLs) to `app.rankability.com` under your Rankability account, and receives your Rankability data in return. Access is granted by OAuth and can be revoked in Rankability under Settings, Connected apps. Rankability's handling of this data is described in its [privacy policy](https://www.rankability.com/privacy/) and [terms](https://www.rankability.com/terms/).
 
 ## Support
 
