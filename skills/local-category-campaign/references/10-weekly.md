@@ -7,7 +7,7 @@ Goal: a short, honest weekly read: what moved, what caused it (where the log sup
 1. `get_campaign`. Note the week number, last snapshot, open decisions and handoffs.
 2. `jobs_status` with the `client_id` (`attention_only: true` lists only what needs a look): confirm this week's scheduled scans completed. Offer re-runs for failures (usage approval).
 3. `save_campaign_snapshot` with `label: "Week N"`.
-4. `compare_campaign_snapshots` against Week 0 and against last week.
+4. `compare_campaign_snapshots` against Week 0 and against last week (or `compare_visibility` with `before_snapshot_id` / `after_snapshot_id` for per-cell detail).
 5. Read the comparison with [data-rules.md](data-rules.md):
    - AI answers vary between runs. Call a change a trend only when it holds across several prompts or two or more weeks.
    - Unmeasured cells on either side are excluded, not counted as losses.
