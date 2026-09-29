@@ -12,7 +12,7 @@ Goal: a saved baseline everything later is compared against. Answer these seven 
 
 ## Steps
 
-1. **Scans.** Every report in the prompt set needs a completed scan. Check `get_client_scan_status`. Wait for scheduled scans when they are close, or run scans now with usage approval (`trigger_scan` per report). Re-run any that failed. A platform that times out (often Google AI Overviews) is recorded as unmeasured, not as absent.
+1. **Scans.** Every report in the prompt set needs a completed scan. Check `jobs_status` with the `client_id`. Wait for scheduled scans when they are close, or run scans now with usage approval (`trigger_scan` per report). Re-run any that failed. A platform that times out (often Google AI Overviews) is recorded as unmeasured, not as absent.
 2. **First-party data.** `get_tracker_seo_performance` with `days: 90` gives GA4 and GSC totals versus the previous 90 days, top pages, top queries and landing pages. For the market's pages and queries, add `get_gsc_search_performance` (`mode: pages` with `page_contains: "<city>"`, and `mode: queries` with `query_contains: "<city>"`) for both periods.
 3. **Visibility.** `get_visibility_summary` for the prompt set's report ids. It counts every brand name and returns per report and platform: mentioned, cited, position, Maps position, organic positions, top competitors and most-cited domains.
 4. **Save it.** `save_campaign_snapshot` with `label: "Week 0"` and the GA4/GSC date range. The snapshot stores the numbers; don't retype them.

@@ -12,10 +12,12 @@ For each: Google profile category, rating and review count (confirm in a browser
 
 ## Where the client is missing
 
-1. For each report in the prompt set, read the results with the client-missing filter (`get_tracker_results` with the filter that returns only sources, citations and results without the client). Collect:
-   - **AI citations:** pages AI answers cite that name competitors but not the client (directories, "best of" lists, info pages on licensing and cost, community threads).
-   - **Search results:** organic and Maps results for each query where the client isn't on page 1 or in the pack.
-   - **Directory profile pages** where competitors hold the slot.
+1. For each report in the prompt set, pull only what's missing the client:
+   - `get_tracker_sources` with `client_missing_only: true`: every ranking or AI-cited page that doesn't mention the client, with a per-domain rollup (paginate with `limit` and `offset`).
+   - `get_tracker_citation_analysis` with `client_missing_only: true`: AI-cited pages naming competitors but not the client (directories, "best of" lists, info pages on licensing and cost, community threads).
+   - `get_tracker_results` with `view: "summary"` and `client_missing_only: true`: platforms where the answer or result list leaves the client out. Add `include_all_results: true` when you need the full organic and Maps lists (rating, reviews, phone, address for Maps listings).
+   - `get_tracker_competitors`: organic competitors for the query.
+   Collect AI citations, search results where the client isn't on page 1 or in the pack, and directory profile pages where competitors hold the slot.
 2. Classify each page: directory listing, "best of" list, info page, community thread, competitor site, lead-gen doorway (out-of-state template sites; list them but never target them).
 3. Verify absence before reporting it. A mention check can miss the client when it appears under its profile name or when a page blocks fetching. Recheck blocked or doubtful pages in a browser, and mark anything unverifiable as such.
 

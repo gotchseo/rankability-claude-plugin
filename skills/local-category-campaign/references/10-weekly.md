@@ -5,7 +5,7 @@ Goal: a short, honest weekly read: what moved, what caused it (where the log sup
 ## Steps
 
 1. `get_campaign`. Note the week number, last snapshot, open decisions and handoffs.
-2. `get_client_scan_status`: confirm this week's scheduled scans completed. Offer re-runs for failures (usage approval).
+2. `jobs_status` with the `client_id` (`attention_only: true` lists only what needs a look): confirm this week's scheduled scans completed. Offer re-runs for failures (usage approval).
 3. `save_campaign_snapshot` with `label: "Week N"`.
 4. `compare_campaign_snapshots` against Week 0 and against last week.
 5. Read the comparison with [data-rules.md](data-rules.md):
