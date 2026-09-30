@@ -4,7 +4,8 @@ Goal: know whether the campaign's results will be measurable before spending wee
 
 ## Tracking checklist (score each Pass, Partial, Fail or Unverified)
 
-1. **Are tracking scripts organized?** Fetch the homepage and the market page source. List hard-coded tags, tag manager containers and measurement IDs. Flag duplicate GA4 IDs, tags delayed or blocked by performance plugins, and tags firing on the wrong pages. If a public GTM container ID is present, its `gtm.js` can be read to list tags and triggers.
+0. **Is analytics actually collecting?** An integration can show connected and healthy while recording nothing. Check `get_tracker_seo_performance` for GA4 sessions in the last 7 and 90 days; zero sessions on a live site means the tag isn't firing. Flag it first, because every conversion KPI depends on it.
+1. **Are tracking scripts organized?** Fetch the homepage and the market page source. List hard-coded tags, tag manager containers and measurement IDs. Flag duplicate GA4 IDs, tags delayed or blocked by performance plugins, and tags firing on the wrong pages. If a public GTM container ID is present, its `gtm.js` can be read to list tags and triggers. A container with no tags is a common cause of "connected but collecting nothing".
 2. **Traffic, events and conversions?** Which key events exist, and do forms, calls and estimate tools each fire one?
 3. **Google data?** GSC and GA4 connected in Rankability (`get_client_overview`), healthy, data current.
 4. **Bing data?** Bing verification (DNS TXT, `BingSiteAuth.xml`, meta tag) and whether anyone reads Bing Webmaster Tools.

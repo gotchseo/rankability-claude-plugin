@@ -16,7 +16,8 @@ Goal: a saved baseline everything later is compared against. Answer these seven 
 2. **First-party data.** `get_tracker_seo_performance` with `days: 90` gives GA4 and GSC totals versus the previous 90 days, top pages, top queries and landing pages. For the market's pages and queries, add `get_gsc_search_performance` (`mode: pages` with `page_contains: "<city>"`, and `mode: queries` with `query_contains: "<city>"`) for both periods.
 3. **Visibility.** `get_visibility_summary` for the prompt set's report ids. It counts every brand name and returns per report and platform: mentioned, cited, position, Maps position, organic positions, top competitors and most-cited domains.
 4. **Save it.** `save_campaign_snapshot` with `label: "Week 0"` and the GA4/GSC date range. The snapshot stores the numbers; don't retype them.
-5. **Bing and Google Business Profile insights** are not in Rankability. Mark question 3 as not measured and log a handoff for a Bing Webmaster Tools export. Profile insights (calls, direction requests, discovery searches) need owner access; log that too.
+5. **Cross-check organic.** For the head terms, compare the Tracker's Google position with Search Console's average position. If the Tracker says not ranked where Search Console says 1 to 3, inspect the captured list (`get_tracker_results` with `include_all_results: true`); a mixed or off-topic list is a bad capture. Report Search Console for organic and note it.
+6. **Bing and Google Business Profile insights** are not in Rankability. Mark question 3 as not measured and log a handoff for a Bing Webmaster Tools export. Profile insights (calls, direction requests, discovery searches) need owner access; log that too.
 
 ## Report
 

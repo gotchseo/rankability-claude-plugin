@@ -1,7 +1,7 @@
 {
   "name": "rankability",
   "displayName": "Rankability",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "AI search and SEO workflows for agencies: run local \"best [service] in [city]\" campaigns end to end, benchmark client visibility across Google and AI answer engines, close competitor citation gaps, refresh decaying pages, triage site health, and assemble client-ready monthly reports from your Rankability account.",
   "author": {
     "name": "Rankability",

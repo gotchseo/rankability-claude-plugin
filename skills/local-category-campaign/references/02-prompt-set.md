@@ -6,7 +6,9 @@ Goal: one Tracker report per distinct buyer intent, localized to the market on b
 
 1. `get_gsc_search_performance` for the last 90 days, filtered to the city (`query_contains: "<city>"`) and to category terms (for example `plumb`, `drain`, `water heater`). Note queries with impressions, their positions and landing pages. Page-level and query-level numbers differ; don't mix them (see [data-rules.md](data-rules.md)).
 2. Offer a Researcher keyword report (usage approval required): `researcher_run` with `client_id`, `include_gsc: true`, `location: "<City>, <State>, United States"`, 8 to 12 seed topics built as "<service> <city> <state abbr>", up to 6 competitor domains, and `content_goals` stating the category and market. Poll `researcher_get` with `view: status`, then read `view: full` once. Results include noise (other trades, other cities, city trivia). Keep only keywords that name the market and the category.
-3. Local modifiers often show zero volume. That is normal and never a reason to drop an intent.
+   If Search Console already has deep market data (hundreds of city-modified queries), recommend skipping the Researcher; it mostly adds noise for local work.
+3. Read existing reports with `get_tracker_matrix`. A platform that **cites** the client's site but doesn't **mention** it usually means the answer names the business under a name the report doesn't know: fix aliases before trusting any rate.
+4. Local modifiers often show zero volume. That is normal and never a reason to drop an intent.
 
 ## Design the set
 
@@ -25,5 +27,5 @@ Show the table (intent, search query, AI prompt, why it earns a slot, what was c
 3. For each approved intent, `upsert_tracker_project` (dry run first, then `confirm_upsert: true`) with: `topic`, `name` ("<Market> <Category> NN: <intent>"), `location: "<City>, <ST>, USA"`, `frequency: weekly`, `auto_track_enabled: true` (only if the user approved recurring tracking), `platform_policy: { all_supported: true, exclude: [youtube_search, google_video_pack, tiktok_search] }` unless video identities are connected, `channel_queries: { aiPrompt, traditionalQuery, localQuery }`, and a stable `idempotency_key` per report.
 4. Set brand matching in the same `upsert_tracker_project` call for every report: `brand_aliases` (every name the client appears under: legal name, Google profile name, "<Brand> Plumbing", common short forms) and `gbp_location_name` (the market's Google profile name exactly). Without these, mentions and Maps positions under the profile name are missed.
 5. Reuse existing reports where the intent matches: update their queries and schedule instead of creating duplicates. Retire reports whose intent is covered (rename to "Retired: ..." and turn off the schedule) rather than deleting history.
-6. Creating a report may start its first scan immediately. Use `jobs_status` with the `client_id` to see running, failed (needs re-run) and never-scanned reports; re-run failed first scans only with usage approval.
+6. Creating or updating a report does not start a scan. Use `jobs_status` with the `client_id` and `trigger_scan` every report that is never scanned or failed (usage approval), then wait for them before the benchmark.
 7. Update the campaign's prompt set with `update_campaign`: `prompt_set: { tracker_project_ids: [...] }` (or `tracker_cluster_id` if the reports already form one Tracker cluster for this client). The campaign only references the reports; it never creates or scans them. Then `append_campaign_log` the change.

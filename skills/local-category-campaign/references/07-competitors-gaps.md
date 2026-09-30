@@ -12,6 +12,8 @@ For each: Google profile category, rating and review count (confirm in a browser
 
 ## Where the client is missing
 
+Run this after the scans' source checks have finished: right after a new scan, most pages read "not checked yet". `get_tracker_sources` reports checked versus not-checked counts; if most are unchecked, run the sweep the next day.
+
 1. Call `get_client_visibility_gaps` with the `campaign_id` (or the prompt set's `project_ids`). In one call it returns every ranking or AI-cited page without the client across the prompt set, one row per page, with page type (directory listing, "best of" list, review platform, info page, community thread, competitor site, lead-gen doorway), market match, competitors present, platforms, prompt count, best position and priority. It also returns AI answers without the client and queries where the client is outside the organic top 10 or the Maps top 3. Paginate with `limit` and `offset`; filter with `page_types`. Doorway, wrong-city and off-topic pages are hidden unless you pass `include_excluded: true`.
    For one report's detail, use `get_tracker_sources` or `get_tracker_citation_analysis` with `client_missing_only: true`, `get_tracker_results` with `view: "summary"` (add `include_all_results: true` for full organic and Maps lists), and `get_tracker_competitors`.
 2. Review the page types. Never target lead-gen doorway sites (out-of-state template domains). Pages marked unverified (login wall, check failed, not checked) are "could not verify", not "missing".
