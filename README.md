@@ -1,6 +1,6 @@
 # Rankability for Claude
 
-Rankability is the AI search platform for agencies. This plugin connects Claude to your Rankability account and teaches Claude the workflows agencies use to win clients, do the work, and prove results: measuring how clients appear in Google and in AI answer engines (ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews and AI Mode), creating and refreshing optimized content, triaging technical issues, and assembling client-ready reports.
+Rankability helps business owners, in-house marketing teams, consultants, and agencies track and improve AI search visibility. This plugin connects Claude to your Rankability account so you can review how your business or clients appear in Google and AI platforms, find competitor citation gaps, create and refresh content, review technical issues, and share measured progress.
 
 ## What's included
 
