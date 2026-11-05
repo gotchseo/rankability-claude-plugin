@@ -1,6 +1,6 @@
 {
   "name": "rankability",
-  "description": "Rankability's plugin for Claude: AI search and SEO workflows for agencies.",
+  "description": "Rankability's plugin for Claude: AI search visibility and SEO for your business or clients.",
   "owner": {
     "name": "Rankability",
     "url": "https://www.rankability.com"
@@ -9,7 +9,7 @@
     {
       "name": "rankability",
       "source": "./",
-      "description": "AI search and SEO workflows for agencies, powered by your Rankability account."
+      "description": "AI search and SEO workflows for businesses, marketing teams, consultants, and agencies, powered by your Rankability account."
     }
   ]
 }
